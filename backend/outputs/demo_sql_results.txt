@@ -1,0 +1,37 @@
+RÉSULTATS DES REQUÊTES SQL — SAFE ZONE
+=======================================================
+
+[1] Zones par nombre de signalements :
+     ville NiveauRisque  score_prediction  nb_signalements  gravite_moyenne
+    Douala        ELEVE            0.9116               76             3.33
+   Ebolowa        MOYEN            0.5093               65             3.02
+    Maroua        ELEVE            0.9275               65             3.45
+Ngaoundéré        MOYEN            0.6133               65             3.46
+   Yaoundé        ELEVE            0.7625               59             3.19
+ Bafoussam        MOYEN            0.5513               58             2.95
+   Bertoua        MOYEN            0.6493               56             2.82
+    Garoua        ELEVE            0.8015               56             3.07
+
+[2] Répartition par type d'incident :
+ type_incident  total  gravite_moy  incidents_graves
+    inondation    127         3.07                52
+   criminalité     92         3.39                52
+      incendie     86         3.21                45
+accident_route     82         3.18                38
+    glissement     73         3.01                28
+     pollution     40         3.20                16
+
+[3] Alertes actives :
+type_alerte NiveauUrgence         date_alerte   ville NiveauRisque
+ inondation      CRITIQUE 2025-11-01 08:00:00  Douala        ELEVE
+ glissement      CRITIQUE 2025-11-12 07:00:00  Garoua        ELEVE
+   incendie        URGENT 2025-11-05 14:30:00 Yaoundé        ELEVE
+  pollution        URGENT 2025-11-10 09:00:00  Douala        ELEVE
+criminalité          INFO 2025-11-08 20:00:00  Maroua        ELEVE
+
+[4] Zones à risque ELEVE :
+  ville NiveauRisque  score_prediction  signalements  alertes_actives
+ Maroua        ELEVE            0.9275            65               65
+ Douala        ELEVE            0.9116           152              152
+ Garoua        ELEVE            0.8015            56               56
+Yaoundé        ELEVE            0.7625            59               59

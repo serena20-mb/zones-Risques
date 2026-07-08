@@ -1,0 +1,28 @@
+MÉTRIQUES DU MODÈLE RANDOMFOREST — SAFE ZONE
+==================================================
+Dataset     : 1176 signalements
+Features    : 11
+Train/Test  : 940 / 236 (80/20)
+==================================================
+
+Accuracy   : 0.8432 (84.32%)
+Precision  : 0.8350 (83.50%)
+Recall     : 0.8432 (84.32%)
+F1-Score   : 0.8377 (83.77%)
+
+Validation croisée (5-fold) :
+  Moyenne : 0.8444 (84.44%)
+  Std Dev : 0.0358
+  Scores  : [np.float64(0.8856), np.float64(0.8043), np.float64(0.8213), np.float64(0.8213), np.float64(0.8894)]
+
+Rapport par classe :
+              precision    recall  f1-score   support
+
+       ELEVE       0.91      0.86      0.88       146
+      FAIBLE       0.00      0.00      0.00         4
+       MOYEN       0.75      0.85      0.80        86
+
+    accuracy                           0.84       236
+   macro avg       0.55      0.57      0.56       236
+weighted avg       0.84      0.84      0.84       236
+
