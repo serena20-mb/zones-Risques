@@ -53,7 +53,7 @@ jobs:
         run: npm install
 
       - name: Lancer les tests
-        run: npm test -- --passWithNoTests
+        run: npm test
 
   # ---------- PYTHON (FastAPI + RandomForest) ----------
   python-model:
@@ -87,3 +87,4 @@ jobs:
           timeout 10 uvicorn api_prediction:app --host 0.0.0.0 --port 8000 &
           sleep 5
           curl -f http://localhost:8000/docs || echo "⚠️ L'API n'a pas répondu, vérifier le point d'entrée (api_prediction:app)"
+
