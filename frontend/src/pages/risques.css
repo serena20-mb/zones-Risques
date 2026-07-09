@@ -1,0 +1,58 @@
+.risk-container{ max-width: 1200px; margin: 0 auto; padding: 60px 30px 80px; }
+
+.risk-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.risk-card{
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.risk-card img{ width: 100%; height: 170px; object-fit: cover; display: block; }
+
+.risk-body{ padding: 18px 20px; }
+
+.risk-body h3{ margin-bottom: 8px; font-size: 16px; }
+.risk-body p{ color: #555; font-size: 14px; line-height: 1.5; }
+
+.risk-tabs-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.risk-tab-btn{
+  padding: 10px 20px;
+  border: 1px solid #cde5cd;
+  background: white;
+  border-radius: 30px;
+  color: #444;
+  font-size: 14px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.risk-tab-btn.active{
+  background: #2E7D32;
+  color: white;
+  border-color: #2E7D32;
+}
+
+.risk-conseils-box{
+  background: white;
+  border-radius: 16px;
+  padding: 30px 35px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.risk-conseils-box h2{ color: #1b1b1b; margin-bottom: 18px; font-size: 18px; }
+
+.risk-conseils-box ul{ padding-left: 20px; }
+.risk-conseils-box li{ color: #444; line-height: 2; font-size: 14px; }

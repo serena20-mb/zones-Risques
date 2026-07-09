@@ -1,0 +1,49 @@
+.actu-container{ max-width: 900px; margin: 0 auto; padding: 60px 30px 80px; }
+
+.events-list{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.event-card{
+  background: white;
+  border-radius: 14px;
+  padding: 22px 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.event-badge{
+  color: white;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-top: 3px;
+}
+
+.event-body{ flex: 1; }
+
+.event-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.event-top h3{ font-size: 16px; }
+.event-date{ color: #999; font-size: 12px; }
+
+.event-body p{ color: #555; font-size: 14px; line-height: 1.5; margin-bottom: 10px; }
+
+.event-link{
+  color: #2E7D32;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+}
+.event-link:hover{ text-decoration: underline; }

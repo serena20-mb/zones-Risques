@@ -1,0 +1,67 @@
+.dash-container{ max-width: 1200px; margin: 0 auto; padding: 60px 30px 80px; }
+
+.dash-offline{
+  background: #fef3c7;
+  color: #b45309;
+  padding: 14px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.dash-stats-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.dash-stat-card{
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.dash-stat-value{ font-size: 26px; font-weight: 800; color: #2E7D32; margin-bottom: 6px; }
+.dash-stat-label{ font-size: 13px; color: #666; }
+
+.dash-table-wrapper{
+  background: white;
+  border-radius: 16px;
+  padding: 25px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  overflow-x: auto;
+}
+
+.dash-table-wrapper h2{ margin-bottom: 18px; font-size: 18px; }
+
+.dash-table-wrapper table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dash-table-wrapper th,
+.dash-table-wrapper td{
+  border-bottom: 1px solid #eee;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.dash-table-wrapper th{
+  background: #2E7D32;
+  color: white;
+  font-weight: 600;
+}
+
+.dash-badge{
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dash-badge.prediction{ background: #dcfce7; color: #16a34a; }
+.dash-badge.error{ background: #fee2e2; color: #dc2626; }

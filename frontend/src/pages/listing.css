@@ -1,0 +1,34 @@
+.listing-container{ max-width: 1200px; margin: 0 auto; padding: 60px 30px; }
+.listing-subtitle{ color: #666; margin-bottom: 35px; }
+
+.listing-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.listing-card{
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.listing-card h2{ font-size: 17px; margin-bottom: 10px; }
+.listing-card p{ color: #555; font-size: 14px; line-height: 1.6; margin-top: 10px; }
+
+.badge{
+  display: inline-block;
+  background: #eef7ee;
+  color: #2E7D32;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.stats-grid-page{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
