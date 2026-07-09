@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
-const fetch = require('node-fetch');
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const predictRouter = require('./api_predict.js');
 const authRoutes = require('./auth.js');
 const auth = require('./middleware/auth.js');
