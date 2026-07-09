@@ -8,8 +8,8 @@
  * npm install --save-dev jest supertest
  */
 
-import request from "supertest";
-import app from "./server.js";
+const request = require('supertest');
+const app = require('./server');
 
 describe("API Backend SafeZone", () => {
 
@@ -38,5 +38,5 @@ describe("API Backend SafeZone", () => {
     expect(res.statusCode).toBe(404);
 
   });
-
+module.exports = app;
 });
