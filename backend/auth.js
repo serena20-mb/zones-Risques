@@ -1,6 +1,7 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import { dbPool } from "./db.js";
+import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
@@ -34,22 +35,56 @@ router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const [rows] = await dbPool.execute("SELECT * FROM Users WHERE email = ?", [email]);
+    const [rows] = await dbPool.execute(
+      "SELECT * FROM Users WHERE email = ?",
+      [email]
+    );
+
     if (rows.length === 0) {
-      return res.status(401).json({ error: "Identifiants incorrects" });
+      return res.status(401).json({
+        error: "Identifiants incorrects"
+      });
     }
 
     const user = rows[0];
+
     const match = await bcrypt.compare(password, user.password);
+
     if (!match) {
-      return res.status(401).json({ error: "Identifiants incorrects" });
+      return res.status(401).json({
+        error: "Identifiants incorrects"
+      });
     }
 
-    res.json({ message: "Connexion réussie", user: { name: user.name, email: user.email } });
+    const token = jwt.sign(
+      {
+        id: user.id,
+        email: user.email
+      },
+      process.env.JWT_SECRET || "safezone2026",
+      {
+        expiresIn: "24h"
+      }
+    );
+
+    res.json({
+      message: "Connexion réussie",
+      token,
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email
+      }
+    });
+
   } catch (err) {
-    console.error("[Auth] Erreur login:", err.message);
-    res.status(500).json({ error: "Erreur serveur lors de la connexion." });
+
+    console.error(err);
+
+    res.status(500).json({
+      error: "Erreur serveur."
+    });
+
   }
 });
-
 export default router;

@@ -4,13 +4,15 @@ import cors from "cors";
 import fs from "fs";
 import fetch from "node-fetch";
 import predictRouter from "./api_predict.js";
-import authRouter from "./auth.js"
+import authRoutes from "./auth.js"
+import auth from "./middleware/auth.js";
 // import modelRouter from "./model_training.js"; // Décommente si ce fichier existe
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
 // ----------------------------
 // Données des villes
 // ----------------------------
@@ -57,7 +59,7 @@ app.get("/api/cities", (req, res) => {
 // ----------------------------
 // Prédiction simple
 // ----------------------------
-app.post("/api/predict", (req, res) => {
+app.post("/api/predict", auth, (req, res) => {
   const { city } = req.body;
 
   if (!city) {
@@ -155,7 +157,7 @@ app.get("/api/meteo/:city", async (req, res) => {
 // Routes IA
 // ----------------------------
 app.use("/api", predictRouter);
-app.use("/api/auth", authRouter);
+app.use("/api/auth", authRoutes);
 
 // Si tu possèdes model_training.js
 // app.use("/api/model", modelRouter);
@@ -233,3 +235,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
+module.exports = app;
