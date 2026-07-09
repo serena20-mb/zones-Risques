@@ -1,12 +1,12 @@
-import "dotenv/config";
-import express from "express";
-import cors from "cors";
-import fs from "fs";
-import fetch from "node-fetch";
-import predictRouter from "./api_predict.js";
-import authRoutes from "./auth.js"
-import auth from "./middleware/auth.js";
-// import modelRouter from "./model_training.js"; // Décommente si ce fichier existe
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const fs = require('fs');
+const fetch = require('node-fetch');
+const predictRouter = require('./api_predict.js');
+const authRoutes = require('./auth.js');
+const auth = require('./middleware/auth.js');
+// const modelRouter = require('./model_training.js'); // Décommente si ce fichier existe
 
 const app = express();
 
